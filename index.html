@@ -65,10 +65,10 @@
 		    
 		    <div class="btn-group btn-group-xs" role="group"></div>
 				  <button id="addGif" class="btn-xs btn-warning">Add a GIF</button>
-				 <!--  <button type="button" class="btn-xs btn-success animateAll">Animate All</button>
+				  <button type="button" class="btn-xs btn-success animateAll">Animate All</button>
 				  <button type="button" class="btn-xs btn-danger stillAll">Still All</button>
 				  <button type="button" class="btn-xs btn-primary clearAll">Clear All</button>	
-			      <div>You can also click individual GIFs to toggle its animation</div> -->
+			      <div>You can also click individual GIFs to toggle its animation</div>
 			</div>
 
 		</form>
@@ -83,10 +83,10 @@ var gifs = ['puppies', 'cats','space','sports','cars','vegas', 'paris','lights',
 
 $(document).on('click', '.gif', whichGif);//when the button with the name of a gif is clicked (class="gif")
 $(document).on('click', '.gifImage', checkState);//when a gif is clicked it changes state (still or animate)
-// $(document).on('click', '.animateAll', animateAll);//
-// $(document).on('click', '.stillAll', stillAll);
-// $(document).on('click', '.clearAll', clearAll);
-// $(document).on('click', '.autoAll', autoAll);
+$(document).on('click', '.animateAll', animateAll);//
+$(document).on('click', '.stillAll', stillAll);
+$(document).on('click', '.clearAll', clearAll);
+
 
 //this is the listener for the addgif button
 $('#addGif').on('click', function(){
@@ -206,17 +206,7 @@ function stillAll(){
 function clearAll(){
 	    $('.gifDiv').empty();
 }
-function autoAll(){
-		displayGif(gifs[0],'animate');
-		(function theLoop (i) {
-		  setTimeout(function () {
-		    displayGif(gifs[i],'animate');
-		    if (++i<gifs.length) {          // If i < the number of gif buttons keep going
-		      theLoop(i);       // Call the loop again, and pass it the current value of i
-		    }
-		  }, 2000);
-		})(1);
-}
+
 renderButtons();
 </script>
 </body>
